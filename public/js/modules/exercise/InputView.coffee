@@ -10,13 +10,23 @@ define (require, exports, module) ->
     className: 'row'
 
     events:
-      'click #submit' : 'submit'
+      'click #submit' : 'validate'
       'keypress #reps' : 'updateOnEnter'
       'keypress #weight' : 'updateOnEnter'
 
     render: ->
       $(@el).append(Input)
       @
+
+    validate: ->
+      @reps = $('#reps')
+      @weight = $('#weight')
+
+      if( @reps.val() && @weight.val() )
+        @submit()
+      else
+        @error()
+
 
     submit: ->
       dates = @get_date()
@@ -28,8 +38,8 @@ define (require, exports, module) ->
       exerciseModel.set
         exerciseId: exerciseId
         dates: dates
-        reps: $('#reps').val()
-        weight: $('#weight').val()
+        reps: @reps.val()
+        weight: @weight.val()
 
       @collection.add(exerciseModel)
       exerciseModel.save()
@@ -43,4 +53,13 @@ define (require, exports, module) ->
       date = day + "/" + month + "/" + year
 
     updateOnEnter: (e) ->
-      @submit()  if e.keyCode is 13
+      @reps.removeClass('error')
+      @weight.removeClass('error')
+      @validate()  if e.keyCode is 13
+
+    error: ->
+      if(!@reps.val()) 
+        $('#reps').addClass('error')
+      
+      if(!@weight.val())
+        $('#weight').addClass('error')

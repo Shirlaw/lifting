@@ -7,5 +7,5 @@
 </div>
 
 <div class="six mobile-two columns">
-	<div id="submit" class="button right">Submit</div>
+	<input type="submit" id="submit" class="exercise button right">
 </div>

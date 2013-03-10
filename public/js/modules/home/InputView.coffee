@@ -30,17 +30,19 @@ define (require, exports, module) ->
     addExcerise: ->
       exercise = $('#exerciseInput')
 
+      title = exercise.val()
+      title = title.slice(0, 1).toUpperCase() + title.slice(1)
+
       exerciseModel = new ExerciseModel
 
       exerciseModel.set
-        'title' : exercise.val()
+        'title' : title
 
-      exerciseModel.save
-        success: ->
-          console.log 'success'
+      exerciseModel.save()
 
       @collection.add(exerciseModel)
       exercise.val('')
 
     updateOnEnter: (e) ->
+      $('#exerciseInput').removeClass('error')
       @validate()  if e.keyCode is 13

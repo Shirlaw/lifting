@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 03:51 AM
+-- Generation Time: Mar 04, 2013 at 11:05 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -51,23 +51,11 @@ INSERT INTO `exercises` (`id`, `title`) VALUES
 CREATE TABLE IF NOT EXISTS `previous` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `exercise_id` int(2) unsigned NOT NULL,
-  `dates` date NOT NULL,
+  `dates` varchar(40) NOT NULL,
   `reps` int(3) unsigned NOT NULL,
   `weight` int(3) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `previous`
---
-
-INSERT INTO `previous` (`id`, `exercise_id`, `dates`, `reps`, `weight`) VALUES
-(1, 1, '2013-02-26', 8, 35),
-(2, 2, '2013-02-26', 5, 45),
-(3, 1, '2013-02-27', 3, 45),
-(4, 1, '0000-00-00', 2, 2),
-(5, 1, '0000-00-00', 2, 2),
-(6, 2, '0000-00-00', 8, 25);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
