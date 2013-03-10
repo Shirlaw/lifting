@@ -1,0 +1,6 @@
+<a class="title">
+	<%= title %>
+</a>
+<a class="delete">
+	X
+</a>

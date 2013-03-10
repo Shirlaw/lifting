@@ -1,0 +1,12 @@
+<div class="three mobile-one columns">
+	<%= dates %>
+</div>
+<div class="three mobile-one columns">
+	<%= reps %>
+</div>
+<div class="three mobile-one columns">
+	<%= weight %>
+</div>
+<div class="three mobile-one columns">
+	<a class="delete">x</a>
+</div>

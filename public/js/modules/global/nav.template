@@ -1,0 +1,6 @@
+<div id="exercisesBtn" class="button six mobile-two columns">
+	Exercises
+</div>
+<div id="weightBtn" class="button six mobile-two columns">
+	Weight
+</div>
