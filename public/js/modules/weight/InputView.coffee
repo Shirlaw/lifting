@@ -1,8 +1,8 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  Input = require "tpl!modules/exercise/input.template"
-  ExerciseModel = require "cs!modules/exercise/ExerciseModel"
+  Input = require "tpl!modules/weight/input.template"
+  WeightModel = require "cs!modules/weight/WeightModel"
 
   class InputView extends Backbone.View
 
@@ -16,33 +16,27 @@ define (require, exports, module) ->
 
     render: ->
       $(@el).append(Input)
-      
       @
 
     validate: ->
-      @reps = $('#resInput')
       @weight = $('#weightInput')
-      if( @reps.val() && @weight.val() )
+
+      if(@weight.val() )
         @submit()
       else
         @error()
 
-
     submit: ->
       dates = @get_date()
-      exerciseId = @options.exerciseId
 
-      exerciseModel = new ExerciseModel
-        exerciseId: exerciseId
+      weightModel = new WeightModel
 
-      exerciseModel.set
-        exerciseId: exerciseId
+      weightModel.set
         dates: dates
-        reps: @reps.val()
         weight: @weight.val()
 
-      @collection.add(exerciseModel)
-      exerciseModel.save()
+      @collection.add(weightModel)
+      weightModel.save()
 
     get_date: ->
       currentTime = new Date()
@@ -53,13 +47,10 @@ define (require, exports, module) ->
       date = day + "/" + month + "/" + year
 
     updateOnEnter: (e) ->
-      @reps.removeClass('error') if(@reps)
       @weight.removeClass('error') if(@reps)
       @validate()  if e.keyCode is 13
 
     error: ->
-      if(!@reps.val()) 
-        @reps.addClass('error')
-      
       if(!@weight.val())
+        console.log 'error'
         @weight.addClass('error')

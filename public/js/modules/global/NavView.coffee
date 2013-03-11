@@ -8,11 +8,15 @@ define (require, exports, module) ->
     id: 'nav'
 
     events:
-    	'click' : 'test'
+      "click #home": "home"
+      "click #weightBtn": "weight"
 
     render: ->
     	$(@el).append(template)
     	@
 
-   	test: (e) ->
+   	home: (e) ->
    		Backbone.history.navigate "/", true
+
+    weight: (e) ->
+      Backbone.history.navigate "/weight", true

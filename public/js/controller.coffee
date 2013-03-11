@@ -9,27 +9,32 @@ define (require, exports, module) ->
   PreviousCollection = require 'cs!modules/exercise/Collection'
   ExerciseView = require 'cs!modules/exercise/ExerciseView'
 
+  WeightCollection = require 'cs!modules/weight/Collection'
+  WeightView = require 'cs!modules/weight/Views'
+
   #class definition
   class Controller extends Backbone.Router
     
     routes:
       '': 'home'
       "exercise/:id": "exercise"
+      "weight" : "weight"
       '*path' : 'page404'
 
     initialize: ->
       @body = $('<div id="body"/>')
       @body.addClass('container')
       ($ 'body').append @body
+      
       @exercisesCollection = new ExercisesCollection
+      @weightCollection = new WeightCollection
+      @weightCollection.fetch()
 
     home: ->
 
       homeView = new HomeView
         collection : @exercisesCollection
 
-      console.log @exercisesCollection
-      
       collectionLength = @exercisesCollection.length
       if(collectionLength == 0)
         @exercisesCollection.fetch()
@@ -45,15 +50,22 @@ define (require, exports, module) ->
       exerciseView = new ExerciseView
         collection : previousCollection
         exerciseId : id
-      previousCollection.url = previousCollection.url() + id
 
-      collectionLength = previousCollection.length
-      console.log collectionLength
-      if(collectionLength == 0)
-        previousCollection.fetch()
+      previousCollection.url = previousCollection.url() + id
+      previousCollection.fetch()
 
       this.swap exerciseView
       $('body').html(@currentView.el)
+
+
+    weight: ->
+
+      weightView = new WeightView
+        collection : @weightCollection
+
+      this.swap weightView
+      $('body').html(@currentView.el)
+
 
     page404: ->
       console.log '404 page'

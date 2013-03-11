@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="<?php echo $serverUrl ?>stylesheets/foundation.min.css">
 		<link rel="stylesheet" href="<?php echo $serverUrl ?>stylesheets/app.css">
 
-		<script src="<?php echo $serverUrl ?>foundationJS/modernizr.foundation.js"></script>
+		<script src="<?php echo $serverUrl ?>foundationJS/vendor/custom.modernizr.js"></script>
  
 
 	</head>
@@ -25,11 +25,8 @@
 	</body>
 		<!-- Included JS Files (Compressed) -->
 
-		<script src="<?php echo $serverUrl ?>foundationJS/jquery.js"></script>
-		<script src="<?php echo $serverUrl ?>foundationJS/foundation.min.js"></script>
+		<!--<script src="<?php echo $serverUrl ?>foundationJS/foundation.min.js"></script>-->
 
-		<!-- Initialize JS Plugins -->
-		<script src="<?php echo $serverUrl ?>foundationJS/app.js"></script>
 
 	
 </html>

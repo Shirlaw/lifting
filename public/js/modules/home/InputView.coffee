@@ -10,6 +10,7 @@ define (require, exports, module) ->
   class ExerciseList extends Backbone.View
 
     id : 'input'
+    className : 'row'
 
     events:
       'click #submit' : 'validate'

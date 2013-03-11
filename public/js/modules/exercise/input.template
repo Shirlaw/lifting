@@ -1,11 +1,11 @@
-<div class="six mobile-two columns">
-	Reps<input id="reps" type="number">
+<div class="large-6 small-6 columns">
+	Reps<input id="repsInput" type="number">
 </div>
 
-<div class="six mobile-two columns">
-	Weight<input id="weight" type="number">
+<div class="large-6 small-6 columns">
+	Weight<input id="weightInput" type="number">
 </div>
 
-<div class="six mobile-two columns">
+<div class="large-6 small-6 columns">
 	<input type="submit" id="submit" class="exercise button right">
 </div>

@@ -1,12 +1,12 @@
-<div class="three mobile-one columns">
+<div class="large-3 small-3 columns">
 	<%= dates %>
 </div>
-<div class="three mobile-one columns">
+<div class="large-3 small-3 columns">
 	<%= reps %>
 </div>
-<div class="three mobile-one columns">
+<div class="large-3 small-3 columns">
 	<%= weight %>
 </div>
-<div class="three mobile-one columns">
+<div class="large-3 small-3 columns">
 	<a class="delete">x</a>
 </div>

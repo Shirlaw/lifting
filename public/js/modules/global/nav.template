@@ -1,6 +1,6 @@
-<div id="exercisesBtn" class="button six mobile-two columns">
+<div id="home" class="button large-6 small-6 columns">
 	Exercises
 </div>
-<div id="weightBtn" class="button six mobile-two columns">
+<div id="weightBtn" class="button large-6 small-6 columns">
 	Weight
 </div>

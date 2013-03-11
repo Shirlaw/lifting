@@ -53,5 +53,29 @@ class Json_Controller extends Controller {
       return $id;
   }
 
+  public function get_weight() {
+    $query = "SELECT * FROM weight ORDER BY id ASC";
+    $posts = DB::query($query);
+    $json = json_encode($posts);
+    //return $query;
+    return $json;
+  }
+
+  public function post_weight() {
+    $weight = Input::json();
+
+    $dates = $weight->dates;
+    $weight = $weight->weight;
+
+    $id = DB::table('weight')->insert_get_id(
+      array(
+        'dates' => $dates,
+        'weight' => $weight
+      )
+    );
+
+    return $id;
+  }
+
 
 }
