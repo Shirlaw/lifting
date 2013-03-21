@@ -1,0 +1,49 @@
+#exercise {
+	margin-bottom: 170px;
+	list-style: none;
+}
+
+#exercise > li {
+	margin-bottom: 10px;
+}
+
+#exercise > a {
+	margin-bottom: 20px;
+}
+
+#exercise li,
+#exercise div {
+	font-size: 19px;
+	text-align:center;
+}
+
+.delete {
+	font-weight: bold;
+}
+
+/* -----------------------------------------
+   Exercise Input
+----------------------------------------- */
+
+#input {
+	background-color: #fff;
+	position: fixed;
+	max-width: none;
+	bottom: 46px;
+	width: 100%;
+	margin: 0 0 -3px 0; /* overlap */
+}
+
+#input #exerciseInput {
+	margin-top: 10px;
+	height: 42px;
+	font-size: 18px;
+}
+
+#submit.lift {
+	margin-top: 10px;
+}
+
+#submit.exercise {
+	margin-bottom: 10px;
+}

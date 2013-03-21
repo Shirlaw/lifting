@@ -1,7 +1,7 @@
 <div class="large-8 small-8 columns">
-	<input placeholder="Weight" id="weightInput" type="number">
+	<input placeholder="Weight" id="weightNumber" type="number">
 </div>
 
 <div class="large-4 small-4 columns">
-	<input type="submit" id="submit" class="exercise button right">
+	<button id="submit" class="exercise button right">Submit</button>
 </div>

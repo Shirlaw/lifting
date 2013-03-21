@@ -1,7 +1,7 @@
-	<div class="large-10 small-8 columns">
-		<input placeholder="Add exercise" id="exerciseInput" type="text">
-	</div>
+<div class="large-10 small-8 columns">
+	<input placeholder="Add exercise" id="exerciseInput" type="text">
+</div>
 
-	<div class="large-2 small-4 columns">
-		<input type="submit" id="submit" class="exercise button right">
-	</div>
+<div class="large-2 small-4 columns">
+	<button type="submit" id="submit" class="lift button right">Add</button>
+</div>

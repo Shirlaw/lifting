@@ -4,7 +4,7 @@ define (require, exports, module) ->
   #Global
   ViewMixin = require 'cs!modules/mixins/viewMixin'
 
-  Exercise = require 'cs!modules/home/Exercise'
+  ExerciseView = require 'cs!modules/home/ExerciseView' 
 
   class ExerciseList extends Backbone.View
 
@@ -18,7 +18,7 @@ define (require, exports, module) ->
       @collection.bind 'add', @renderItem
     
     renderItem: (model) ->
-      itemView = new Exercise model: model
+      itemView = new ExerciseView model: model
       itemView.render()
       $(@el).append itemView.el
       @

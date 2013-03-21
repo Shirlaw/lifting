@@ -11,15 +11,14 @@ define (require, exports, module) ->
 
     events:
       'click #submit' : 'validate'
-      'keypress #reps' : 'updateOnEnter'
-      'keypress #weight' : 'updateOnEnter'
+      'keypress #weightNumber' : 'updateOnEnter'
 
     render: ->
       $(@el).append(Input)
       @
 
     validate: ->
-      @weight = $('#weightInput')
+      @weight = $('#weightNumber')
 
       if(@weight.val() )
         @submit()

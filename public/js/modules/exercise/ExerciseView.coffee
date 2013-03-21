@@ -6,7 +6,7 @@ define (require, exports, module) ->
   ViewMixin = require 'cs!modules/mixins/viewMixin'
 
   HeaderView = require 'cs!modules/exercise/HeaderView'
-  PreviousView = require 'cs!modules/exercise/Previous'
+  PreviousViews = require 'cs!modules/exercise/PreviousViews'
   InputView = require 'cs!modules/exercise/InputView'
 
   class ExerciseView extends Backbone.View
@@ -16,7 +16,7 @@ define (require, exports, module) ->
       headerView = new HeaderView
       headerView.render()
 
-      previousView = new PreviousView
+      previousViews = new PreviousViews
         collection : @collection
         
       inputView = new InputView
@@ -28,6 +28,6 @@ define (require, exports, module) ->
       navView.render()
 
       $(@el).append headerView.el
-      $(@el).append previousView.el
+      $(@el).append previousViews.el
       $(@el).append inputView.el
       $(@el).append(navView.el)

@@ -3,6 +3,8 @@ define (require, exports, module) ->
 
   template = require "tpl!modules/home/exercise.template"
 
+  ConfirmView = require 'cs!modules/global/ConfirmView'
+
   class View extends Backbone.View
 
     tagName: 'li'
@@ -20,6 +22,9 @@ define (require, exports, module) ->
       Backbone.history.navigate "exercise/" + @model.id, true
 
     deleteExercise: ->
-      @remove()
-      @model.url = "/json/home/" + @model.id
-      @model.destroy()
+      confirmView = new ConfirmView
+
+      if(confirmView.response)
+        @remove()
+        @model.url = "/json/home/" + @model.id
+        @model.destroy()

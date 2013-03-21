@@ -11,24 +11,25 @@ define (require, exports, module) ->
 
     events:
       'click #submit' : 'validate'
-      'keypress #reps' : 'updateOnEnter'
-      'keypress #weight' : 'updateOnEnter'
+      'keypress #repsInput' : 'updateOnEnter'
+      'keypress #weightInput' : 'updateOnEnter'
 
     render: ->
       $(@el).append(Input)
-      
       @
 
     validate: ->
-      @reps = $('#resInput')
+      @reps = $('#repsInput')
       @weight = $('#weightInput')
       if( @reps.val() && @weight.val() )
         @submit()
       else
         @error()
 
-
     submit: ->
+      @reps.removeClass('error') if(@reps)
+      @weight.removeClass('error') if(@reps)
+      
       dates = @get_date()
       exerciseId = @options.exerciseId
 
@@ -53,12 +54,12 @@ define (require, exports, module) ->
       date = day + "/" + month + "/" + year
 
     updateOnEnter: (e) ->
-      @reps.removeClass('error') if(@reps)
-      @weight.removeClass('error') if(@reps)
+      console.log 'sweeeet'
       @validate()  if e.keyCode is 13
 
     error: ->
-      if(!@reps.val()) 
+      console.log @reps.val()
+      if(!@reps.val())
         @reps.addClass('error')
       
       if(!@weight.val())

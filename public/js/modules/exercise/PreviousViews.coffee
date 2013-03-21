@@ -3,7 +3,7 @@ define (require, exports, module) ->
   Backbone = require 'backbone'
   ViewMixin = require 'cs!modules/mixins/viewMixin'
   
-  View = require 'cs!modules/exercise/view'
+  PreviousView = require 'cs!modules/exercise/PreviousView'
   
   class Views extends Backbone.View
 
@@ -16,7 +16,7 @@ define (require, exports, module) ->
       @collection.bind 'reset', @render
     
     renderItem: (model) ->
-      itemView = new View model: model
+      itemView = new PreviousView model: model
       itemView.render()
       $(@el).prepend itemView.el
       @

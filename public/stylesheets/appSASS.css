@@ -5,17 +5,17 @@
 :: Page Name 1
 :: Page Name 2
 */
-/* line 10, app.scss */
+/* line 10, appSASS.scss */
 a {
   cursor: pointer;
 }
 
-/* line 14, app.scss */
+/* line 14, appSASS.scss */
 a:active {
   background: #fff;
 }
 
-/* line 18, app.scss */
+/* line 18, appSASS.scss */
 .button {
   margin-bottom: 0;
 }
@@ -177,6 +177,22 @@ a:active {
    Weight Input
 ----------------------------------------- */
 /* line 10, C:/wamp/www/lifting/public/stylesheets/../js/modules/weight/style.scss */
+#weightNumber {
+  height: 42px;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+/* line 47, appSASS.scss */
+#weight {
+  list-style: none;
+  text-align: center;
+}
+
+/* -----------------------------------------
+   Weight Input
+----------------------------------------- */
+/* line 56, appSASS.scss */
 #weightNumber {
   height: 42px;
   margin-bottom: 18px;

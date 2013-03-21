@@ -3,6 +3,8 @@ define (require, exports, module) ->
 
   template = require "tpl!modules/exercise/previous.template"
 
+  ConfirmView = require 'cs!modules/global/ConfirmView'
+
   class View extends Backbone.View
 
     tagName: 'li'
@@ -16,6 +18,9 @@ define (require, exports, module) ->
       $(@el).append html
 
     clicked: (e) ->
-      @remove()
-      @model.url = "/json/exercise/" + @model.id
-      @model.destroy()
+      confirmView = new ConfirmView
+
+      if(confirmView.response)
+        @remove()
+        @model.url = "/json/exercise/" + @model.id
+        @model.destroy()

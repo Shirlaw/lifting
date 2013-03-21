@@ -6,7 +6,7 @@ define (require, exports, module) ->
   ViewMixin = require 'cs!modules/mixins/viewMixin'
 
   #View files
-  ExerciseView = require 'cs!modules/home/ExerciseList'
+  ExerciseView = require 'cs!modules/home/ExerciseViews'
   InputView = require 'cs!modules/home/InputView'
 
 

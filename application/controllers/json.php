@@ -18,13 +18,16 @@ class Json_Controller extends Controller {
 
   public function delete_home($id = null) {
     $affected = DB::table('exercises')->delete($id);
+    $affected = DB::table('previous')->where('exercise_id', '=', $id)->delete();
   }
   
   public function get_exercise($id = null) {
-    $query = "SELECT * FROM previous WHERE exercise_id=" . $id . " ORDER BY id ASC";
-    $posts = DB::query($query);
-    $json = json_encode($posts);
-    //return $query;
+    $exercise = DB::table('previous')
+      ->where('exercise_id', '=', $id)
+      ->order_by('id', 'ASC')
+      ->get();
+
+    $json = json_encode($exercise);
     return $json;
   }
 
@@ -54,10 +57,12 @@ class Json_Controller extends Controller {
   }
 
   public function get_weight() {
+    $weight = DB::table('weight')
+      ->order_by('id', 'ASC')
+      ->get();
     $query = "SELECT * FROM weight ORDER BY id ASC";
-    $posts = DB::query($query);
-    $json = json_encode($posts);
-    //return $query;
+
+    $json = json_encode($weight);
     return $json;
   }
 
@@ -77,5 +82,8 @@ class Json_Controller extends Controller {
     return $id;
   }
 
+  public function delete_weight($id = null) {
+    $affected = DB::table('weight')->delete($id);
+  }
 
 }

@@ -26,8 +26,4 @@
 		<!-- Included JS Files (Compressed) -->
 
 		<!--<script src="<?php echo $serverUrl ?>foundationJS/foundation.min.js"></script>-->
-
-
-	
 </html>
-
