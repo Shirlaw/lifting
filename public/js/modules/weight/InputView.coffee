@@ -1,7 +1,7 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  Input = require "tpl!modules/weight/input.template"
+  Input = require "text!modules/weight/input.template"
   WeightModel = require "cs!modules/weight/WeightModel"
 
   class InputView extends Backbone.View

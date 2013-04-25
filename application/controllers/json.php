@@ -4,6 +4,20 @@ class Json_Controller extends Controller {
 
   public $restful = true;
 
+  public function get_all() {
+    $array = array();
+
+    $array['exercises'] = DB::table('exercises')->get();
+    $array['previous'] = DB::table('previous')->get();
+    $array['weight'] = DB::table('weight')->get();
+    //var_dump($exercises);
+    //$array[0] = Response::eloquent(Exercises::order_by('title', 'asc')->get());
+    // var_dump($array);
+    $array = json_encode($array);
+    return $array;
+    //return Response::eloquent(Exercises::order_by('title', 'asc')->get());
+  }
+
   public function post_home() {
     $exercise = Input::json();
     $title = $exercise->title;

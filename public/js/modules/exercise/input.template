@@ -1,5 +1,5 @@
 <div class="large-6 small-6 columns">
-	Reps<input id="repsInput" type="number">
+	Reps<input  autofocus id="repsInput" type="number">
 </div>
 
 <div class="large-6 small-6 columns">

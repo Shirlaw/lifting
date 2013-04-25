@@ -1,5 +1,31 @@
 <?php
 
+$localArray = array(
+			'driver'   => 'mysql',
+			'host'     => '127.0.0.1',
+			'database' => 'db_lifting',
+			'username' => 'root',
+			'password' => '',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+		);
+
+$serverArray = array(
+			'driver'   => 'mysql',
+			'host'     => 'localhost',
+			'database' => 'khoraint_liftingPublic',
+			'username' => 'khoraint_james',
+			'password' => 'G!Cmk2Ms}R~Q',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+		);
+
+if($_SERVER['HTTP_HOST'] == 'lifting.dev') {
+	$databaseArr = $localArray;
+}else {
+	$databaseArr = $serverArray;
+}
+
 return array(
 
 	/*
@@ -67,15 +93,7 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
-			'driver'   => 'mysql',
-			'host'     => '127.0.0.1',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-		),
+		'mysql' => $databaseArr,
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',

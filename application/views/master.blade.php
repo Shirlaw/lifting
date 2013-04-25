@@ -10,7 +10,8 @@
 		</title>
 
 		<?php $serverUrl = "http://". $_SERVER['HTTP_HOST'] . "/"; ?>
-
+		<!--<script src="<?php echo $serverUrl ?>js/require.js"></script>
+		<script type="text/javascript" src="<?php echo $serverUrl ?>js/main-built.js"></script>-->
 		<script data-main="<?php echo $serverUrl ?>js/main" src="<?php echo $serverUrl ?>js/require.js"></script>
 		<!-- Included CSS Files (Compressed) -->
 		<link rel="stylesheet" href="<?php echo $serverUrl ?>stylesheets/foundation.min.css">

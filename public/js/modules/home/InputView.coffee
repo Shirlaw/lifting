@@ -5,7 +5,7 @@ define (require, exports, module) ->
   ViewMixin = require 'cs!modules/mixins/viewMixin'
 
   ExerciseModel = require "cs!modules/home/ExerciseModel"
-  Input = require "tpl!modules/home/input.template"
+  Input = require "text!modules/home/input.template"
 
   class ExerciseList extends Backbone.View
 

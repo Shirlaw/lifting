@@ -1,12 +1,13 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  template = require "tpl!modules/exercise/previous.template"
+  template = require "text!modules/exercise/previous.template"
 
   ConfirmView = require 'cs!modules/global/ConfirmView'
 
   class View extends Backbone.View
 
+    template: _.template(template)
     tagName: 'li'
     className: 'row'
 
@@ -14,8 +15,7 @@ define (require, exports, module) ->
       'click .delete' : 'clicked'
 
     render: ->
-      html = template this.model.toJSON()
-      $(@el).append html
+      $(@el).append @template @model.toJSON()
 
     clicked: (e) ->
       confirmView = new ConfirmView

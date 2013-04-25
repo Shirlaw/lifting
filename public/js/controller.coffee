@@ -3,6 +3,7 @@ define (require, exports, module) ->
 
   #Home
   ExercisesCollection = require 'cs!modules/home/Collection'
+  test = require 'text!modules/home/exercise.template'
   HomeView = require 'cs!modules/home/HomeView' 
 
   #Exercise
@@ -11,6 +12,8 @@ define (require, exports, module) ->
 
   WeightCollection = require 'cs!modules/weight/Collection'
   WeightView = require 'cs!modules/weight/Views'
+
+  Collection = require 'cs!modules/test/Collection'
 
   #class definition
   class Controller extends Backbone.Router
@@ -25,41 +28,55 @@ define (require, exports, module) ->
       @body = $('<div id="body"/>')
       @body.addClass('container')
       ($ 'body').append @body
-      
+
+      @collection = new Collection
       @exercisesCollection = new ExercisesCollection
       @weightCollection = new WeightCollection
-      @weightCollection.fetch()
+      @testCollection = new WeightCollection
 
+      @collection.exercisesCollection = @exercisesCollection
+      @collection.weightCollection = @weightCollection
+      @collection.testCollection = @testCollection
+
+      @collection.fetch 
+        success: (results) ->
+          console.log 'sweeeeet'
     home: ->
-
       homeView = new HomeView
         collection : @exercisesCollection
-
-      collectionLength = @exercisesCollection.length
-      if(collectionLength == 0)
-        @exercisesCollection.fetch()
 
       this.swap homeView
       $('body').html(@currentView.el)
 
     exercise: (id) ->
-      previousCollection = new PreviousCollection([],
-        id: id
-      )
+      pastId = parseFloat(id)
+
+      @past = _(@testCollection.filter((model) ->
+
+        return model.get('exercise_id') == pastId
+      ))
+
+      previousCollection = new PreviousCollection
+      previousCollection.reset(@past._wrapped)
+
+      console.log @past
+      console.log @testCollection
+
+      console.log previousCollection
+
+      # previousCollection = new PreviousCollection([],
+      #   id: id
+      # )
 
       exerciseView = new ExerciseView
         collection : previousCollection
         exerciseId : id
-
-      previousCollection.url = previousCollection.url() + id
-      previousCollection.fetch()
+     
 
       this.swap exerciseView
       $('body').html(@currentView.el)
 
-
     weight: ->
-
       weightView = new WeightView
         collection : @weightCollection
 

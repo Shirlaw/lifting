@@ -1,7 +1,7 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  header = require "tpl!modules/exercise/header.template"
+  header = require "text!modules/exercise/header.template"
 
   class HeaderView extends Backbone.View
   	

@@ -3,8 +3,5 @@ define (require, exports, module) ->
        
   class exercieCollection extends Backbone.Collection
   	
-  	initialize: (models, options) ->
-  	  @id = options.id
-
   	url: ->
   	  "/json/exercise/"

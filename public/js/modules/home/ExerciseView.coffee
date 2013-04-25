@@ -1,12 +1,13 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  template = require "tpl!modules/home/exercise.template"
+  template = require "text!modules/home/exercise.template"
 
   ConfirmView = require 'cs!modules/global/ConfirmView'
 
   class View extends Backbone.View
 
+    template: _.template(template)
     tagName: 'li'
     className: 'twelve columns'
 
@@ -15,8 +16,10 @@ define (require, exports, module) ->
       'click .delete' : 'deleteExercise'
 
     render: ->
-      html = template this.model.toJSON()
-      $(@el).append html
+      $(@el).append @template @model.toJSON()
+      @
+      #html = this.template this.model.toJSON()
+      #$(@el).append html
 
     goToExercise: (e) ->
       Backbone.history.navigate "exercise/" + @model.id, true

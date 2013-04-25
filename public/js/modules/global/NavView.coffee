@@ -1,7 +1,7 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  template = require "tpl!modules/global/nav.template"
+  template = require "text!modules/global/nav.template"
 
   class NavView extends Backbone.View
     className: 'row'

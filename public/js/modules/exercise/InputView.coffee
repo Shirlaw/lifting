@@ -1,7 +1,7 @@
 define (require, exports, module) ->
   Backbone = require 'backbone'
 
-  Input = require "tpl!modules/exercise/input.template"
+  Input = require "text!modules/exercise/input.template"
   ExerciseModel = require "cs!modules/exercise/ExerciseModel"
 
   class InputView extends Backbone.View
@@ -21,7 +21,7 @@ define (require, exports, module) ->
     validate: ->
       @reps = $('#repsInput')
       @weight = $('#weightInput')
-      if( @reps.val() && @weight.val() )
+      if( @reps.val() )
         @submit()
       else
         @error()
@@ -54,11 +54,9 @@ define (require, exports, module) ->
       date = day + "/" + month + "/" + year
 
     updateOnEnter: (e) ->
-      console.log 'sweeeet'
       @validate()  if e.keyCode is 13
 
     error: ->
-      console.log @reps.val()
       if(!@reps.val())
         @reps.addClass('error')
       

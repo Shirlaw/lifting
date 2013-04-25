@@ -5,17 +5,17 @@
 :: Page Name 1
 :: Page Name 2
 */
-/* line 10, app.scss */
+/* line 9, app.scss */
 a {
   cursor: pointer;
 }
 
-/* line 14, app.scss */
+/* line 13, app.scss */
 a:active {
   background: #fff;
 }
 
-/* line 18, app.scss */
+/* line 17, app.scss */
 .button {
   margin-bottom: 0;
 }
@@ -23,7 +23,7 @@ a:active {
 /* -----------------------------------------
    Nav
 ----------------------------------------- */
-/* line 1, C:/wamp/www/lifting/public/stylesheets/../js/modules/global/nav.scss */
+/* line 1, ../js/modules/global/nav.scss */
 #nav {
   position: fixed;
   bottom: 0;
@@ -32,7 +32,7 @@ a:active {
   max-width: none;
 }
 
-/* line 9, C:/wamp/www/lifting/public/stylesheets/../js/modules/global/nav.scss */
+/* line 9, ../js/modules/global/nav.scss */
 #nav .mobile-two {
   padding: 15px;
 }
@@ -40,13 +40,13 @@ a:active {
 /* -----------------------------------------
    Header
 ----------------------------------------- */
-/* line 1, C:/wamp/www/lifting/public/stylesheets/../js/modules/global/header.scss */
+/* line 1, ../js/modules/global/header.scss */
 #header {
   margin-bottom: 15px;
   margin-top: 15px;
 }
 
-/* line 6, C:/wamp/www/lifting/public/stylesheets/../js/modules/global/header.scss */
+/* line 6, ../js/modules/global/header.scss */
 #header > div {
   font-size: 20px;
   text-align: center;
@@ -56,7 +56,7 @@ a:active {
 /* -----------------------------------------
    Input
 ----------------------------------------- */
-/* line 1, C:/wamp/www/lifting/public/stylesheets/../js/modules/global/input.scss */
+/* line 1, ../js/modules/global/input.scss */
 #nav {
   position: fixed;
   bottom: 0;
@@ -65,7 +65,7 @@ a:active {
   max-width: none;
 }
 
-/* line 9, C:/wamp/www/lifting/public/stylesheets/../js/modules/global/input.scss */
+/* line 9, ../js/modules/global/input.scss */
 #nav .mobile-two {
   padding: 15px;
 }
@@ -73,18 +73,18 @@ a:active {
 /* -----------------------------------------
    Home
 ----------------------------------------- */
-/* line 1, C:/wamp/www/lifting/public/stylesheets/../js/modules/home/style.scss */
+/* line 1, ../js/modules/home/style.scss */
 #exercises {
   list-style: none;
   margin-bottom: 100px;
 }
 
-/* line 6, C:/wamp/www/lifting/public/stylesheets/../js/modules/home/style.scss */
+/* line 6, ../js/modules/home/style.scss */
 #exercises > li {
   border-bottom: 1px #dbebf1 solid;
 }
 
-/* line 10, C:/wamp/www/lifting/public/stylesheets/../js/modules/home/style.scss */
+/* line 10, ../js/modules/home/style.scss */
 #exercises > li > a.title {
   font-size: 24px;
   cursor: pointer;
@@ -94,7 +94,7 @@ a:active {
   padding: 4px;
 }
 
-/* line 19, C:/wamp/www/lifting/public/stylesheets/../js/modules/home/style.scss */
+/* line 19, ../js/modules/home/style.scss */
 #exercises > li > .delete {
   float: right;
   font-size: 24px;
@@ -105,30 +105,30 @@ a:active {
 /* -----------------------------------------
    Exercise
 ----------------------------------------- */
-/* line 1, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 1, ../js/modules/exercise/style.scss */
 #exercise {
   margin-bottom: 170px;
   list-style: none;
 }
 
-/* line 6, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 6, ../js/modules/exercise/style.scss */
 #exercise > li {
   margin-bottom: 10px;
 }
 
-/* line 10, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 10, ../js/modules/exercise/style.scss */
 #exercise > a {
   margin-bottom: 20px;
 }
 
-/* line 15, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 15, ../js/modules/exercise/style.scss */
 #exercise li,
 #exercise div {
   font-size: 19px;
   text-align: center;
 }
 
-/* line 20, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 20, ../js/modules/exercise/style.scss */
 .delete {
   font-weight: bold;
 }
@@ -136,7 +136,7 @@ a:active {
 /* -----------------------------------------
    Exercise Input
 ----------------------------------------- */
-/* line 28, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 28, ../js/modules/exercise/style.scss */
 #input {
   background-color: #fff;
   position: fixed;
@@ -147,19 +147,20 @@ a:active {
   /* overlap */
 }
 
-/* line 37, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 37, ../js/modules/exercise/style.scss */
 #input #exerciseInput {
   margin-top: 10px;
   height: 42px;
   font-size: 18px;
 }
 
-/* line 43, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 43, ../js/modules/exercise/style.scss */
 #submit.lift {
   margin-top: 10px;
+  width: 100%;
 }
 
-/* line 47, C:/wamp/www/lifting/public/stylesheets/../js/modules/exercise/style.scss */
+/* line 48, ../js/modules/exercise/style.scss */
 #submit.exercise {
   margin-bottom: 10px;
 }
@@ -167,7 +168,7 @@ a:active {
 /* -----------------------------------------
    Weight
 ----------------------------------------- */
-/* line 1, C:/wamp/www/lifting/public/stylesheets/../js/modules/weight/style.scss */
+/* line 1, ../js/modules/weight/style.scss */
 #weight {
   list-style: none;
   text-align: center;
@@ -176,7 +177,7 @@ a:active {
 /* -----------------------------------------
    Weight Input
 ----------------------------------------- */
-/* line 10, C:/wamp/www/lifting/public/stylesheets/../js/modules/weight/style.scss */
+/* line 10, ../js/modules/weight/style.scss */
 #weightNumber {
   height: 42px;
   margin-bottom: 18px;
